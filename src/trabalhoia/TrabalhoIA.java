@@ -150,19 +150,28 @@ public class TrabalhoIA {
         }
 
         for (int i = 0; i < 10; i++) {
-            String log = "";
-            for (int z = 0; z < 10; z++) {
+            for (int z = 0; z < 1; z++) {
                 if (matrizCopia[i][z] == 0) {
-
+                    //Verificando se "para cima" existe
+                    if(i-1>=0 && matriz[i-1][z] ==0){
+                        //Verificando se a posicao "para cima" é obstaculo
+                        System.out.println("oi");
+                    }
+                    
+                    
+                    
+                    
+                    
                     matrizCopia[referenciaLinha][referenciaColuna] = 0;
 
                     matrizCopia[i][z] = 5;
 
                     referenciaLinha = i;
                     referenciaColuna = z;
+                    //ISSO É SÓ A ESCRITA
                     for (int l = 0; l < 10; l++) {
                         String visual = "";
-                        for (int c = 0; c < 10; c++) {
+                        for (int c = 0; c < 1; c++) {
                             visual = visual + "[" + matriz[l][c] + "] ";
 
                         }
@@ -174,13 +183,15 @@ public class TrabalhoIA {
                         Thread.sleep(1000);
                     } catch (InterruptedException ex) {
                     }
+                    //PAROU AS PARADA DE ESCRITA
 
                 }
 
                 //log = log + "[" + matrizCopia[i][z] + "] ";
 
             }
-           // System.out.println(log);
+           // System.out.println(log); aaaaaaaaaaa
         }
+        
     }
 }
