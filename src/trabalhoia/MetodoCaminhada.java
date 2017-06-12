@@ -18,7 +18,6 @@ public class MetodoCaminhada {
     private int colunaRef;
 
     public String[][] verificar(int linha1, int coluna1, String[][] matriz1) {
-        //para cima, para baixo, para direita, para esquerda
         //direita baixo cima esquerda
         matriz = matriz1;
         linha = linha1;

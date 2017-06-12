@@ -28,6 +28,8 @@ public class CriarMatriz {
 
         //Quantidade de obstaculos
         Random obs1 = new Random();
+        
+        
         //Defino o range de quadrados pretos( de 10 a 25)
         int range = 25 - 10 + 1; // Maximo - minimo +1
         int obstaculo = obs1.nextInt(range) + 10;
@@ -49,17 +51,19 @@ public class CriarMatriz {
                 i = i - 1;
             }
         }
-        int teste = 0;
+        //Coloca vida 5 vida de 5
+        for(int i=0;i<5;i++){
+            int linha = randomLinha.nextInt(10);
+            
+        }
 
         for (int l = 0; l < 10; l++) {
             for (int c = 0; c < 10; c++) {
                 if ("x".equals(matriz[l][c])) {
-                    teste++;
                 }
             }
         }
-        System.out.println(teste + " Xs");
-        // pritando de nv
+        // Print da Matriz
         for (int l = 0; l < 10; l++) {
             String visual = " ";
             for (int c = 0; c < 10; c++) {
@@ -68,8 +72,14 @@ public class CriarMatriz {
             System.out.println(visual);
 
         }
+        
+        
+        
+        
         return matriz;
     }
+    
+    
 
     public void obstaculo() {
 
