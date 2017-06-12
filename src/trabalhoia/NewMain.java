@@ -73,32 +73,32 @@ public class NewMain {
 
         }
 
-        if (coluna != 9
-                && !"x".equals(matriz[linha][coluna + 1]) && !"A".equals(matriz[linha][coluna + 1])
-                && !"-".equals(matriz[linha][coluna + 1])) {
-            System.out.println("para direita");
-            paraDireita();
-        } else {
-            if (linha != 9
-                    && !"x".equals(matriz[linha + 1][coluna]) && !"A".equals(matriz[linha + 1][coluna])
-                    && !"-".equals(matriz[linha + 1][coluna])) {
-                System.out.println("para baixo");
-                paraBaixo();
-            } else {
-                if (linha != 0
-                        && !"x".equals(matriz[linha - 1][coluna]) && !"A".equals(matriz[linha - 1][coluna])
-                        && !"-".equals(matriz[linha - 1][coluna])) {
-                    System.out.println("para cima");
-                    paraCima();
-                } else {
-                    if (!"x".equals(matriz[linha][coluna - 1]) && !"A".equals(matriz[linha][coluna - 1])
-                            && !"-".equals(matriz[linha][coluna - 1])) {
-                        System.out.println("para esuqera");
-                        paraEsquerda();
-                    }
-                }
-            }
-        }
+//        if (coluna != 9
+//                && !"x".equals(matriz[linha][coluna + 1]) && !"A".equals(matriz[linha][coluna + 1])
+//                && !"-".equals(matriz[linha][coluna + 1])) {
+//            System.out.println("para direita");
+//            paraDireita();
+//        } else {
+//            if (linha != 9
+//                    && !"x".equals(matriz[linha + 1][coluna]) && !"A".equals(matriz[linha + 1][coluna])
+//                    && !"-".equals(matriz[linha + 1][coluna])) {
+//                System.out.println("para baixo");
+//                paraBaixo();
+//            } else {
+//                if (linha != 0
+//                        && !"x".equals(matriz[linha - 1][coluna]) && !"A".equals(matriz[linha - 1][coluna])
+//                        && !"-".equals(matriz[linha - 1][coluna])) {
+//                    System.out.println("para cima");
+//                    paraCima();
+//                } else {
+//                    if (!"x".equals(matriz[linha][coluna - 1]) && !"A".equals(matriz[linha][coluna - 1])
+//                            && !"-".equals(matriz[linha][coluna - 1])) {
+//                        System.out.println("para esuqera");
+//                        paraEsquerda();
+//                    }
+//                }
+//            }
+//        }
 
     }
 

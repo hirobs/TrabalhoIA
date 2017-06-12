@@ -26,12 +26,12 @@ public class MetodoCaminhada {
 
         System.out.println("A linha é" + linha);
         System.out.println("A coluna é" + coluna);
-        
-        if (linha != 0
-                && !"x".equals(matriz[linha - 1][coluna]) && !"A".equals(matriz[linha - 1][coluna])
-                && !"-".equals(matriz[linha - 1][coluna])) {
-            System.out.println("para cima");
-            paraCima();
+
+        if (coluna != 9
+                && !"x".equals(matriz[linha][coluna + 1]) && !"A".equals(matriz[linha][coluna + 1])
+                && !"-".equals(matriz[linha][coluna + 1])) {
+            System.out.println("para direita");
+            paraDireita();
         } else {
             if (linha != 9
                     && !"x".equals(matriz[linha + 1][coluna]) && !"A".equals(matriz[linha + 1][coluna])
@@ -39,11 +39,11 @@ public class MetodoCaminhada {
                 System.out.println("para baixo");
                 paraBaixo();
             } else {
-                if (coluna != 9
-                        && !"x".equals(matriz[linha][coluna + 1]) && !"A".equals(matriz[linha][coluna + 1])
-                        && !"-".equals(matriz[linha][coluna + 1])) {
-                    System.out.println("para direita");
-                    paraDireita();
+                if (linha != 0
+                        && !"x".equals(matriz[linha - 1][coluna]) && !"A".equals(matriz[linha - 1][coluna])
+                        && !"-".equals(matriz[linha - 1][coluna])) {
+                    System.out.println("para cima");
+                    paraCima();
                 } else {
                     if (!"x".equals(matriz[linha][coluna - 1]) && !"A".equals(matriz[linha][coluna - 1])
                             && !"-".equals(matriz[linha][coluna - 1])) {
@@ -61,7 +61,7 @@ public class MetodoCaminhada {
                 && !"-".equals(matriz[linha - 1][coluna])) {
             matriz[linha][coluna] = "-";
             matriz[linha - 1][coluna] = "A";
-            linhaRef = linha-1;
+            linhaRef = linha - 1;
             colunaRef = coluna;
 
         }
@@ -73,8 +73,8 @@ public class MetodoCaminhada {
                 && !"-".equals(matriz[linha + 1][coluna])) {
             matriz[linha][coluna] = "-";
             matriz[linha + 1][coluna] = "A";
-            
-            linhaRef = linha+1;
+
+            linhaRef = linha + 1;
             colunaRef = coluna;
         }
     }
@@ -84,9 +84,9 @@ public class MetodoCaminhada {
                 && !"-".equals(matriz[linha][coluna + 1])) {
             matriz[linha][coluna] = "-";
             matriz[linha][coluna + 1] = "A";
-            
+
             linhaRef = linha;
-            colunaRef = coluna+1;
+            colunaRef = coluna + 1;
         }
     }
 
@@ -95,9 +95,9 @@ public class MetodoCaminhada {
                 && !"-".equals(matriz[linha][coluna - 1])) {
             matriz[linha][coluna] = "-";
             matriz[linha][coluna - 1] = "A";
-            
+
             linhaRef = linha;
-            colunaRef = coluna-1;
+            colunaRef = coluna - 1;
         }
     }
 

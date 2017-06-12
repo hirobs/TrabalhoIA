@@ -165,8 +165,8 @@ public class TrabalhoIA {
                     if("A".equals(matriz[l][c])){
                         referenciaLinha=l;
                         referenciaColuna=c;
-                        if(l==9 && c==9){
-                            JOptionPane.showMessageDialog(null, "PARABENS, VC GANHOU");
+                        if("-".equals(matriz[9][9]) || "A".equals(matriz[9][9])){
+                            JOptionPane.showMessageDialog(null, "Parabéns, você ganhou!");
                             i=100;
                         }
                     }
@@ -177,7 +177,7 @@ public class TrabalhoIA {
             }
             System.out.println("\n");
             try {
-                Thread.sleep(1000);
+                Thread.sleep(700);
             } catch (InterruptedException ex) {
             }
             //PAROU AS PARADA DE ESCRITA
