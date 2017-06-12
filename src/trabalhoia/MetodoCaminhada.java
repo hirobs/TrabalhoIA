@@ -11,58 +11,94 @@ package trabalhoia;
  */
 public class MetodoCaminhada {
 
-    private String[][] matriz = new String[10][10];
-    private int[][] percorrido = new int[10][10];
+    private String[][] matriz;
     private int linha;
     private int coluna;
+    private int linhaRef;
+    private int colunaRef;
 
-    public void verificar(int linha1, int coluna1, String[][] matriz1, int[][] percorrido1) {
+    public String[][] verificar(int linha1, int coluna1, String[][] matriz1) {
         //para cima, para baixo, para direita, para esquerda
+        //direita baixo cima esquerda
         matriz = matriz1;
         linha = linha1;
         coluna = coluna1;
 
-        if (linha != 0) {
+        System.out.println("A linha é" + linha);
+        System.out.println("A coluna é" + coluna);
+        
+        if (linha != 0
+                && !"x".equals(matriz[linha - 1][coluna]) && !"A".equals(matriz[linha - 1][coluna])
+                && !"-".equals(matriz[linha - 1][coluna])) {
+            System.out.println("para cima");
             paraCima();
         } else {
-            if (linha != 9) {
+            if (linha != 9
+                    && !"x".equals(matriz[linha + 1][coluna]) && !"A".equals(matriz[linha + 1][coluna])
+                    && !"-".equals(matriz[linha + 1][coluna])) {
+                System.out.println("para baixo");
                 paraBaixo();
             } else {
-                if (coluna != 9) {
+                if (coluna != 9
+                        && !"x".equals(matriz[linha][coluna + 1]) && !"A".equals(matriz[linha][coluna + 1])
+                        && !"-".equals(matriz[linha][coluna + 1])) {
+                    System.out.println("para direita");
                     paraDireita();
                 } else {
-                    paraEsquerda();
+                    if (!"x".equals(matriz[linha][coluna - 1]) && !"A".equals(matriz[linha][coluna - 1])
+                            && !"-".equals(matriz[linha][coluna - 1])) {
+                        System.out.println("para esuqera");
+                        paraEsquerda();
+                    }
                 }
             }
         }
+        return matriz;
     }
 
     public void paraCima() {
-        if (!"x".equals(matriz[linha - 1][coluna])) {
-            matriz[linha - 1][coluna] = "~";
+        if (!"x".equals(matriz[linha - 1][coluna]) && !"A".equals(matriz[linha - 1][coluna])
+                && !"-".equals(matriz[linha - 1][coluna])) {
+            matriz[linha][coluna] = "-";
+            matriz[linha - 1][coluna] = "A";
+            linhaRef = linha-1;
+            colunaRef = coluna;
+
         }
 
     }
 
     public void paraBaixo() {
-        if (matriz[linha + 1][coluna] != "x") {
-            matriz[linha + 1][coluna] = "~";
+        if (!"x".equals(matriz[linha + 1][coluna]) && !"A".equals(matriz[linha + 1][coluna])
+                && !"-".equals(matriz[linha + 1][coluna])) {
+            matriz[linha][coluna] = "-";
+            matriz[linha + 1][coluna] = "A";
+            
+            linhaRef = linha+1;
+            colunaRef = coluna;
         }
     }
 
     public void paraDireita() {
-        if (matriz[linha][coluna + 1] != "x") {
-            matriz[linha][coluna + 1] = "~";
+        if (!"x".equals(matriz[linha][coluna + 1]) && !"A".equals(matriz[linha][coluna + 1])
+                && !"-".equals(matriz[linha][coluna + 1])) {
+            matriz[linha][coluna] = "-";
+            matriz[linha][coluna + 1] = "A";
+            
+            linhaRef = linha;
+            colunaRef = coluna+1;
         }
     }
 
     public void paraEsquerda() {
-        if (matriz[linha][coluna - 1] != "x") {
-            matriz[linha][coluna - 1] = "~";
+        if (!"x".equals(matriz[linha][coluna - 1]) && !"A".equals(matriz[linha][coluna - 1])
+                && !"-".equals(matriz[linha][coluna - 1])) {
+            matriz[linha][coluna] = "-";
+            matriz[linha][coluna - 1] = "A";
+            
+            linhaRef = linha;
+            colunaRef = coluna-1;
         }
     }
 
-    public void verificar() {
-
-    }
 }
