@@ -45,10 +45,13 @@ public class MetodoCaminhada {
                     System.out.println("para cima");
                     paraCima();
                 } else {
-                    if (!"x".equals(matriz[linha][coluna - 1]) && !"A".equals(matriz[linha][coluna - 1])
+                    if (coluna!=0
+                            &&!"x".equals(matriz[linha][coluna - 1]) && !"A".equals(matriz[linha][coluna - 1])
                             && !"-".equals(matriz[linha][coluna - 1])) {
                         System.out.println("para esuqera");
                         paraEsquerda();
+                    }else{
+                        matriz[0][0]="  ";
                     }
                 }
             }
