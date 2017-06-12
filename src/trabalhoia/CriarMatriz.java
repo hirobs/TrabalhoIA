@@ -54,6 +54,17 @@ public class CriarMatriz {
         //Coloca vida 5 vida de 5
         for(int i=0;i<5;i++){
             int linha = randomLinha.nextInt(10);
+            int coluna = randomColuna.nextInt(10);
+            if(!"F".equals(matriz[linha][coluna])
+                    && !"x".equals(matriz[linha][coluna])
+                    && !"I".equals(matriz[linha][coluna])
+                    && !"v".equals(matriz[linha][coluna])
+                )
+            {
+                matriz[linha][coluna] = "v";
+            }else{
+                i=i-1;
+            }
             
         }
 
