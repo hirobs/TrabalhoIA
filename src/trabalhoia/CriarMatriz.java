@@ -28,8 +28,7 @@ public class CriarMatriz {
 
         //Quantidade de obstaculos
         Random obs1 = new Random();
-        
-        
+
         //Defino o range de quadrados pretos( de 10 a 25)
         int range = 25 - 10 + 1; // Maximo - minimo +1
         int obstaculo = obs1.nextInt(range) + 10;
@@ -51,29 +50,40 @@ public class CriarMatriz {
                 i = i - 1;
             }
         }
-        //Coloca vida 5 vida de 5
-        for(int i=0;i<5;i++){
+        //Coloca 5 vida de 5
+        for (int i = 0; i < 5; i++) {
             int linha = randomLinha.nextInt(10);
             int coluna = randomColuna.nextInt(10);
-            if(!"F".equals(matriz[linha][coluna])
+            if (!"F".equals(matriz[linha][coluna])
                     && !"x".equals(matriz[linha][coluna])
                     && !"I".equals(matriz[linha][coluna])
-                    && !"v".equals(matriz[linha][coluna])
-                )
-            {
-                matriz[linha][coluna] = "v";
-            }else{
-                i=i-1;
-            }
-            
-        }
-
-        for (int l = 0; l < 10; l++) {
-            for (int c = 0; c < 10; c++) {
-                if ("x".equals(matriz[l][c])) {
-                }
+                    && !"C".equals(matriz[linha][coluna])) {
+                matriz[linha][coluna] = "C";
+            } else {
+                i = i - 1;
             }
         }
+        //Coloca 3 vida de 10
+        for (int i = 0; i < 3; i++) {
+            int linha = randomLinha.nextInt(10);
+            int coluna = randomColuna.nextInt(10);
+            if (!"F".equals(matriz[linha][coluna])
+                    && !"x".equals(matriz[linha][coluna])
+                    && !"I".equals(matriz[linha][coluna])
+                    && !"C".equals(matriz[linha][coluna])
+                    && !"D".equals(matriz[linha][coluna])) {
+                matriz[linha][coluna] = "D";
+            } else {
+                i = i - 1;
+            }
+        }
+        
+//        for (int l = 0; l < 10; l++) {
+//            for (int c = 0; c < 10; c++) {
+//                if ("x".equals(matriz[l][c])) {
+//                }
+//            }
+//        }
         // Print da Matriz
         for (int l = 0; l < 10; l++) {
             String visual = " ";
@@ -83,14 +93,9 @@ public class CriarMatriz {
             System.out.println(visual);
 
         }
-        
-        
-        
-        
+
         return matriz;
     }
-    
-    
 
     public void obstaculo() {
 

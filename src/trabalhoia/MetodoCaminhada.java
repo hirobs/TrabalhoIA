@@ -23,8 +23,8 @@ public class MetodoCaminhada {
         linha = linha1;
         coluna = coluna1;
 
-        System.out.println("A linha é" + linha);
-        System.out.println("A coluna é" + coluna);
+       // System.out.println("A linha é" + linha);
+       // System.out.println("A coluna é" + coluna);
 
         if (coluna != 9
                 && !"x".equals(matriz[linha][coluna + 1]) && !"A".equals(matriz[linha][coluna + 1])

@@ -69,12 +69,26 @@ public class NewMain {
             if (!"F".equals(matriz[linha][coluna])
                     && !"x".equals(matriz[linha][coluna])
                     && !"I".equals(matriz[linha][coluna])
-                    && !"v".equals(matriz[linha][coluna])) {
-                matriz[linha][coluna] = "v";
+                    && !"C".equals(matriz[linha][coluna])) {
+                matriz[linha][coluna] = "C";
             } else {
                 i = i - 1;
             }
 
+        }
+        //Coloca 3 vida de 10
+        for (int i = 0; i < 3; i++) {
+            int linha = randomLinha.nextInt(10);
+            int coluna = randomColuna.nextInt(10);
+            if (!"F".equals(matriz[linha][coluna])
+                    && !"x".equals(matriz[linha][coluna])
+                    && !"I".equals(matriz[linha][coluna])
+                    && !"C".equals(matriz[linha][coluna])
+                    && !"D".equals(matriz[linha][coluna])) {
+                matriz[linha][coluna] = "D";
+            } else {
+                i = i - 1;
+            }
         }
         System.out.println(teste + " Xs");
         // pritando de nv

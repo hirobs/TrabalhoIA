@@ -40,10 +40,12 @@ public class TrabalhoIA {
 
         System.out.println("\n");
         
-        
+        int vida=50;
         for(int i =0;i<=50;i++){
-            
+            vida--;
+            System.out.println("Você tem "+vida+" vidas.");
             matriz = caminhar.verificar(referenciaLinha, referenciaColuna, matriz);
+            
             
             //ISSO É SÓ A ESCRITA
             for (int l = 0; l < 10; l++) {
