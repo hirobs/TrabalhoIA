@@ -6,6 +6,7 @@
 package trabalhoia;
 
 import java.util.Random;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -100,7 +101,16 @@ public class NewMain {
             System.out.println(visual);
 
         }
-
+        
+        //2,1 a 9,9 
+        //somar linha + coluna
+        int linhateste =7;
+        int colunateste = 2;
+        int soma = linhateste+colunateste;
+        int distancia = 18-soma;
+        JOptionPane.showMessageDialog(null,distancia);
+        
+        
 //        if (coluna != 9
 //                && !"x".equals(matriz[linha][coluna + 1]) && !"A".equals(matriz[linha][coluna + 1])
 //                && !"-".equals(matriz[linha][coluna + 1])) {

@@ -102,5 +102,11 @@ public class MetodoCaminhada {
             colunaRef = coluna - 1;
         }
     }
+    public void algoritmoA(){
+        int distanciaFinal;
+        int distanciaAndada;
+        
+        
+    }
 
 }
