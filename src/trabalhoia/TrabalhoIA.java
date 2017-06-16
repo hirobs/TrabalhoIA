@@ -17,11 +17,10 @@ public class TrabalhoIA {
      * @param args the command line arguments
      */
     //Variavel Global
-    static String bonusVida;
+    static String bonusVida="";
 
     public static void main(String[] args) {
 
-        String[][] percorrido = new String[10][10];
         MetodoCaminhada caminhar = new MetodoCaminhada();
         CriarMatriz matriz1 = new CriarMatriz();
         String[][] matriz = matriz1.criarMatriz();
@@ -42,15 +41,29 @@ public class TrabalhoIA {
 
         int vida = 50;
         for (int i = 0; i <= 50; i++) {
+            
+            matriz = caminhar.verificar(referenciaLinha, referenciaColuna, matriz);
+            //Relação a bonus vida
             vida--;
+            if("C".equals(bonusVida)){
+                vida = vida+5;
+                bonusVida="";
+                System.out.println("Ganhou 5 de vida");
+            }else{
+                if("D".equals(bonusVida)){
+                    vida=vida+10;
+                    System.out.println("Ganhou 10 de vida");
+                    bonusVida="";
+                }
+            }
             if (vida < 0) {
                 JOptionPane.showMessageDialog(null, "Sem vida, fim do jogo");
                 break;
             } else {
                 System.out.println("Você tem " + vida + " vidas.");
             }
-            matriz = caminhar.verificar(referenciaLinha, referenciaColuna, matriz);
-
+            //Fim do bonus vida
+            
             //ISSO É SÓ A ESCRITA 
             for (int l = 0; l < 10; l++) {
                 String visual = " ";
@@ -64,7 +77,7 @@ public class TrabalhoIA {
                             JOptionPane.showMessageDialog(null, "Parabéns, você ganhou!");
                             i = 100;
                         }
-                        //Verificação Derrota
+                        //Verificação Derrota de caminho sem saída
                         if ("  ".equals(matriz[0][0])) {
                             JOptionPane.showMessageDialog(null, "Caminho sem saída. Fim do Jogo");
 

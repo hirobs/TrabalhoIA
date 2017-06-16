@@ -23,9 +23,8 @@ public class MetodoCaminhada {
         linha = linha1;
         coluna = coluna1;
 
-       // System.out.println("A linha é" + linha);
-       // System.out.println("A coluna é" + coluna);
-
+        // System.out.println("A linha é" + linha);
+        // System.out.println("A coluna é" + coluna);
         if (coluna != 9
                 && !"x".equals(matriz[linha][coluna + 1]) && !"A".equals(matriz[linha][coluna + 1])
                 && !"-".equals(matriz[linha][coluna + 1])) {
@@ -44,13 +43,13 @@ public class MetodoCaminhada {
                     System.out.println("para cima");
                     paraCima();
                 } else {
-                    if (coluna!=0
-                            &&!"x".equals(matriz[linha][coluna - 1]) && !"A".equals(matriz[linha][coluna - 1])
+                    if (coluna != 0
+                            && !"x".equals(matriz[linha][coluna - 1]) && !"A".equals(matriz[linha][coluna - 1])
                             && !"-".equals(matriz[linha][coluna - 1])) {
                         System.out.println("para esuqera");
                         paraEsquerda();
-                    }else{
-                        matriz[0][0]="  ";
+                    } else {
+                        matriz[0][0] = "  ";
                     }
                 }
             }
@@ -59,54 +58,75 @@ public class MetodoCaminhada {
     }
 
     public void paraCima() {
-        if (!"x".equals(matriz[linha - 1][coluna]) && !"A".equals(matriz[linha - 1][coluna])
-                && !"-".equals(matriz[linha - 1][coluna])) {
-            matriz[linha][coluna] = "-";
-            matriz[linha - 1][coluna] = "A";
-            linhaRef = linha - 1;
-            colunaRef = coluna;
-
+        if ("C".equals(matriz[linha - 1][coluna])) {
+            TrabalhoIA.bonusVida = "C";
+        } else {
+            if ("D".equals(matriz[linha - 1][coluna])) {
+                TrabalhoIA.bonusVida = "D";
+            }
         }
+        matriz[linha][coluna] = "-";
+        matriz[linha - 1][coluna] = "A";
+        linhaRef = linha - 1;
+        colunaRef = coluna;
 
     }
 
     public void paraBaixo() {
-        if (!"x".equals(matriz[linha + 1][coluna]) && !"A".equals(matriz[linha + 1][coluna])
-                && !"-".equals(matriz[linha + 1][coluna])) {
-            matriz[linha][coluna] = "-";
-            matriz[linha + 1][coluna] = "A";
-
-            linhaRef = linha + 1;
-            colunaRef = coluna;
+        if ("C".equals(matriz[linha + 1][coluna])) {
+            TrabalhoIA.bonusVida = "C";
+        } else {
+            if ("D".equals(matriz[linha + 1][coluna])) {
+                TrabalhoIA.bonusVida = "D";
+            }
         }
+
+        matriz[linha][coluna] = "-";
+        matriz[linha + 1][coluna] = "A";
+
+        linhaRef = linha + 1;
+        colunaRef = coluna;
+
     }
 
     public void paraDireita() {
-        if (!"x".equals(matriz[linha][coluna + 1]) && !"A".equals(matriz[linha][coluna + 1])
-                && !"-".equals(matriz[linha][coluna + 1])) {
-            matriz[linha][coluna] = "-";
-            matriz[linha][coluna + 1] = "A";
-
-            linhaRef = linha;
-            colunaRef = coluna + 1;
+        if ("C".equals(matriz[linha][coluna + 1])) {
+            TrabalhoIA.bonusVida = "C";
+        } else {
+            if ("D".equals(matriz[linha][coluna + 1])) {
+                TrabalhoIA.bonusVida = "D";
+            }
         }
+
+        matriz[linha][coluna] = "-";
+        matriz[linha][coluna + 1] = "A";
+
+        linhaRef = linha;
+        colunaRef = coluna + 1;
+
     }
 
     public void paraEsquerda() {
-        if (!"x".equals(matriz[linha][coluna - 1]) && !"A".equals(matriz[linha][coluna - 1])
-                && !"-".equals(matriz[linha][coluna - 1])) {
-            matriz[linha][coluna] = "-";
-            matriz[linha][coluna - 1] = "A";
-
-            linhaRef = linha;
-            colunaRef = coluna - 1;
+        if ("C".equals(matriz[linha][coluna - 1])) {
+            TrabalhoIA.bonusVida = "C";
+        } else {
+            if ("D".equals(matriz[linha][coluna - 1])) {
+                TrabalhoIA.bonusVida = "D";
+            }
         }
+
+        matriz[linha][coluna] = "-";
+        matriz[linha][coluna - 1] = "A";
+
+        linhaRef = linha;
+        colunaRef = coluna - 1;
+
     }
-    public void algoritmoA(){
+
+    public void algoritmoA() {
         int distanciaFinal;
         int distanciaAndada;
-        
-        
+
     }
 
 }
