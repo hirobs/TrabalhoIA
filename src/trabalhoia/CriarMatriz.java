@@ -33,7 +33,7 @@ public class CriarMatriz {
         int range = 25 - 10 + 1; // Maximo - minimo +1
         int obstaculo = obs1.nextInt(range) + 10;
 
-        System.out.println(obstaculo);
+        System.out.println(obstaculo+" obstáculos.");
 
         Random randomLinha = new Random();
         Random randomColuna = new Random();
@@ -78,43 +78,28 @@ public class CriarMatriz {
             }
         }
         
-//        for (int l = 0; l < 10; l++) {
-//            for (int c = 0; c < 10; c++) {
-//                if ("x".equals(matriz[l][c])) {
-//                }
-//            }
-//        }
-        // Print da Matriz
-//        for (int l = 0; l < 10; l++) {
-//            String visual = " ";
-//            for (int c = 0; c < 10; c++) {
-//                visual = visual + "[" + matriz[l][c] + "] ";
-//            }
-//            System.out.println(visual);
-//
-//        }
 
         return matriz;
     }
 
-    public void obstaculo() {
-
-        Random obs1 = new Random();
-        //Defino o range de quadrados pretos( de 10 a 25)
-        int range = 25 - 10 + 1; // Maximo - minimo +1
-        int obstaculo = obs1.nextInt(range) + 10;
-
-        Random randomLinha = new Random();
-        Random randomColuna = new Random();
-
-        for (int i = 0; i <= obstaculo; i++) {
-            int linha = randomLinha.nextInt(10);
-            int coluna = randomColuna.nextInt(10);
-            if (linha == 9 && coluna == 9) {
-
-            }
-        }
-
-    }
+//    public void obstaculo() {
+//
+//        Random obs1 = new Random();
+//        //Defino o range de quadrados pretos( de 10 a 25)
+//        int range = 25 - 10 + 1; // Maximo - minimo +1
+//        int obstaculo = obs1.nextInt(range) + 10;
+//
+//        Random randomLinha = new Random();
+//        Random randomColuna = new Random();
+//
+//        for (int i = 0; i <= obstaculo; i++) {
+//            int linha = randomLinha.nextInt(10);
+//            int coluna = randomColuna.nextInt(10);
+//            if (linha == 9 && coluna == 9) {
+//
+//            }
+//        }
+//
+//    }
 
 }

@@ -27,6 +27,7 @@ public class TrabalhoIA {
         String[][] matriz = matriz1.criarMatriz();
         int referenciaLinha = 0;
         int referenciaColuna = 0;
+        int caminhoPercorrido=0;
 
         //Escrita Matriz Inicial
         for (int x = 0; x < 10; x++) {
@@ -39,13 +40,15 @@ public class TrabalhoIA {
         }
 
         System.out.println("\n");
-
+        
         int vida = 50;
         for (int i = 0; i <= 50; i++) {
 
             matriz = caminhar.verificar(referenciaLinha, referenciaColuna, matriz);
             //Relação a bonus vida
             vida--;
+            caminhoPercorrido++;
+            
             if ("C".equals(bonusVida)) {
                 vida = vida + 5;
                 bonusVida = "";
