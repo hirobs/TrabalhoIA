@@ -49,7 +49,8 @@ public class MetodoCaminhada {
                         System.out.println("para esuqera");
                         paraEsquerda();
                     } else {
-                        matriz[0][0] = "  ";
+                        //matriz[0][0] = "  ";
+                        TrabalhoIA.verificaCondicao="semSaida";
                     }
                 }
             }

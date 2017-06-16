@@ -85,14 +85,14 @@ public class CriarMatriz {
 //            }
 //        }
         // Print da Matriz
-        for (int l = 0; l < 10; l++) {
-            String visual = " ";
-            for (int c = 0; c < 10; c++) {
-                visual = visual + "[" + matriz[l][c] + "] ";
-            }
-            System.out.println(visual);
-
-        }
+//        for (int l = 0; l < 10; l++) {
+//            String visual = " ";
+//            for (int c = 0; c < 10; c++) {
+//                visual = visual + "[" + matriz[l][c] + "] ";
+//            }
+//            System.out.println(visual);
+//
+//        }
 
         return matriz;
     }

@@ -17,7 +17,8 @@ public class TrabalhoIA {
      * @param args the command line arguments
      */
     //Variavel Global
-    static String bonusVida="";
+    static String bonusVida = "";
+    static String verificaCondicao = "";
 
     public static void main(String[] args) {
 
@@ -41,61 +42,61 @@ public class TrabalhoIA {
 
         int vida = 50;
         for (int i = 0; i <= 50; i++) {
-            
+
             matriz = caminhar.verificar(referenciaLinha, referenciaColuna, matriz);
             //Relação a bonus vida
             vida--;
-            if("C".equals(bonusVida)){
-                vida = vida+5;
-                bonusVida="";
+            if ("C".equals(bonusVida)) {
+                vida = vida + 5;
+                bonusVida = "";
                 System.out.println("Ganhou 5 de vida");
-            }else{
-                if("D".equals(bonusVida)){
-                    vida=vida+10;
+            } else {
+                if ("D".equals(bonusVida)) {
+                    vida = vida + 10;
                     System.out.println("Ganhou 10 de vida");
-                    bonusVida="";
+                    bonusVida = "";
                 }
             }
             if (vida < 0) {
                 JOptionPane.showMessageDialog(null, "Sem vida, fim do jogo");
                 break;
             } else {
-                System.out.println("Você tem " + vida + " vidas.");
-            }
-            //Fim do bonus vida
-            
-            //ISSO É SÓ A ESCRITA 
-            for (int l = 0; l < 10; l++) {
-                String visual = " ";
-                for (int c = 0; c < 10; c++) {
-                    visual = visual + "[" + matriz[l][c] + "] ";
-                    if ("A".equals(matriz[l][c])) {
-                        referenciaLinha = l;
-                        referenciaColuna = c;
-                        //Verificação Vitória
-                        if ("-".equals(matriz[9][9]) || "A".equals(matriz[9][9])) {
-                            JOptionPane.showMessageDialog(null, "Parabéns, você ganhou!");
-                            i = 100;
-                        }
-                        //Verificação Derrota de caminho sem saída
-                        if ("  ".equals(matriz[0][0])) {
-                            JOptionPane.showMessageDialog(null, "Caminho sem saída. Fim do Jogo");
+                if ("semSaida".equals(verificaCondicao)) {
+                    JOptionPane.showMessageDialog(null, "Caminho sem saída. Fim do Jogo");
+                    break;
+                } else {
+                    System.out.println("Você tem " + vida + " vidas.");
 
-                            i = 100;
+                    {
+                        //Escrita
+                        for (int l = 0; l < 10; l++) {
+                            String visual = " ";
+                            for (int c = 0; c < 10; c++) {
+                                visual = visual + "[" + matriz[l][c] + "] ";
+                                if ("A".equals(matriz[l][c])) {
+                                    referenciaLinha = l;
+                                    referenciaColuna = c;
+                                    //Verificação Vitória
+                                    if ("-".equals(matriz[9][9]) || "A".equals(matriz[9][9])) {
+                                        JOptionPane.showMessageDialog(null, "Parabéns, você ganhou!");
+                                        i = 100;
+                                    }
+                                }
+                            }
+                            System.out.println(visual);
+
                         }
                     }
+                    System.out.println("\n");
+                    try {
+                        Thread.sleep(700);
+                    } catch (InterruptedException ex) {
+                    }
 
+                    //PAROU AS PARADA DE ESCRITA
                 }
-                System.out.println(visual);
 
             }
-            System.out.println("\n");
-            try {
-                Thread.sleep(700);
-            } catch (InterruptedException ex) {
-            }
-            //PAROU AS PARADA DE ESCRITA
         }
-
     }
 }
