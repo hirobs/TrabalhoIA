@@ -5,6 +5,8 @@
  */
 package trabalhoia;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import javax.swing.JOptionPane;
 
@@ -21,6 +23,9 @@ public class NewMain {
 
         CriarMatriz criarMatriz = new CriarMatriz();
         String[][] matriz = new String[10][10];
+        
+        matriz = criarMatriz.criarMatriz();
+        
         //matriz = criarMatriz.criarMatriz();
         //somar linha + coluna
         //int linhateste = 7;
@@ -29,16 +34,21 @@ public class NewMain {
         //int distancia = 18 - soma;
         //JOptionPane.showMessageDialog(null, distancia);
 
-        for (int l = 0; l < 10; l++) {
-            for (int c = 0; c < 10; c++) {
-                matriz[l][c] = " ";
-            }
-        }
+        //direita baixo cima esquerda
+        List<Integer> arrayOrdem = new ArrayList();
+        // String[] arraySoma = new String[4];
+        List<Integer> arraySoma = new ArrayList();
+
+//        for (int l = 0; l < 10; l++) {
+//            for (int c = 0; c < 10; c++) {
+//                matriz[l][c] = " ";
+//            }
+//        }
         int linha = 5;
         int coluna = 6;
-        
-        matriz[linha][coluna]="A";
-        
+
+        matriz[linha][coluna] = "A";
+
         //Escrita Matriz Inicial
         for (int x = 0; x < 10; x++) {
             String log = " ";
@@ -58,7 +68,8 @@ public class NewMain {
             soma = 18 - (linha + coluna + 1);
             System.out.println("direita");
             System.out.println(soma);
-
+            arraySoma.add(soma);
+            arrayOrdem.add(1);
         }
 
         if (linha != 9
@@ -68,6 +79,8 @@ public class NewMain {
             soma = 18 - (linha + 1 + coluna);
             System.out.println("baixo");
             System.out.println(soma);
+            arraySoma.add(soma);
+            arrayOrdem.add(2);
 
         }
         if (linha != 0
@@ -77,6 +90,8 @@ public class NewMain {
             soma = 18 - (linha + coluna - 1);
             System.out.println("cima");
             System.out.println(soma);
+            arraySoma.add(soma);
+            arrayOrdem.add(3);
         }
         if (coluna != 0
                 && !"x".equals(matriz[linha][coluna - 1]) && !"A".equals(matriz[linha][coluna - 1])
@@ -85,35 +100,38 @@ public class NewMain {
             soma = 18 - (linha + coluna - 1);
             System.out.println("esquerda");
             System.out.println(soma);
-
+            arraySoma.add(soma);
+            arrayOrdem.add(4);
         }
+        int menor = 18;
+        int cont = 0;
+        int ordem = 5;
+        for (int arraySoma1 : arraySoma) {
 
-//        if(coluna != 9
-//                && !"x".equals(matriz[linha][coluna + 1]) && !"A".equals(matriz[linha][coluna + 1])
-//                && !"-".equals(matriz[linha][coluna + 1])) {
-//            System.out.println("para direita");
-//            paraDireita();
-//        } else {
-//            if (linha != 9
-//                    && !"x".equals(matriz[linha + 1][coluna]) && !"A".equals(matriz[linha + 1][coluna])
-//                    && !"-".equals(matriz[linha + 1][coluna])) {
-//                System.out.println("para baixo");
-//                paraBaixo();
-//            } else {
-//                if (linha != 0
-//                        && !"x".equals(matriz[linha - 1][coluna]) && !"A".equals(matriz[linha - 1][coluna])
-//                        && !"-".equals(matriz[linha - 1][coluna])) {
-//                    System.out.println("para cima");
-//                    paraCima();
-//                } else {
-//                    if (!"x".equals(matriz[linha][coluna - 1]) && !"A".equals(matriz[linha][coluna - 1])
-//                            && !"-".equals(matriz[linha][coluna - 1])) {
-//                        System.out.println("para esuqera");
-//                        paraEsquerda();
-//                    }
-//                }
-//            }
-//        }
+            if (arraySoma1 < menor) {
+                menor = arraySoma1;
+
+                ordem = arrayOrdem.get(cont);
+                //System.out.println("UEPA ENTROU no "+ordem);
+            }
+            cont++;
+        }
+        if (ordem == 1) {
+            System.out.println("Vai para direita");
+        } else {
+            if (ordem == 2) {
+                System.out.println("Vai para baixo");
+            } else {
+                if (ordem == 3) {
+                    System.out.println("vai para cima");
+                } else {
+                    if (ordem == 4) {
+                        System.out.println("vai para esquerda");
+                    } else {
+                        System.out.println("Nao entrou em nenhum");
+                    }
+                }
+            }
+        }
     }
-
 }

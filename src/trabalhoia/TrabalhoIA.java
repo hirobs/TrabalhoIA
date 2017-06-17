@@ -44,7 +44,9 @@ public class TrabalhoIA {
         int vida = 50;
         for (int i = 0; i <= 50; i++) {
 
+            
             matriz = caminhar.verificar(referenciaLinha, referenciaColuna, matriz);
+            //caminhar.verificar2(matriz);
             //Relação a bonus vida
             vida--;
             caminhoPercorrido++;
