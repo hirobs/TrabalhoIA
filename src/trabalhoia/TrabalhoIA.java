@@ -13,9 +13,6 @@ import javax.swing.JOptionPane;
  */
 public class TrabalhoIA {
 
-    /**
-     * @param args the command line arguments
-     */
     //Variavel Global
     static String bonusVida = "";
     static String verificaCondicao = "";
@@ -28,7 +25,6 @@ public class TrabalhoIA {
         String[][] matriz = matriz1.criarMatriz();
         int referenciaLinha = 0;
         int referenciaColuna = 0;
-        int caminhoPercorrido = 0;
 
         //Escrita Matriz Inicial
         for (int x = 0; x < 10; x++) {
@@ -50,10 +46,8 @@ public class TrabalhoIA {
             } else {
                 matriz = caminhar.verificar2(matriz, referenciaLinha, referenciaColuna);
             }
-            //caminhar.verificar2(matriz);
             //Relação a bonus vida
             vida--;
-            caminhoPercorrido++;
 
             if ("C".equals(bonusVida)) {
                 vida = vida + 5;
@@ -98,7 +92,7 @@ public class TrabalhoIA {
                     }
                     System.out.println("\n");
                     try {
-                        Thread.sleep(700);
+                        Thread.sleep(850);
                     } catch (InterruptedException ex) {
                     }
 

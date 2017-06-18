@@ -82,24 +82,4 @@ public class CriarMatriz {
         return matriz;
     }
 
-//    public void obstaculo() {
-//
-//        Random obs1 = new Random();
-//        //Defino o range de quadrados pretos( de 10 a 25)
-//        int range = 25 - 10 + 1; // Maximo - minimo +1
-//        int obstaculo = obs1.nextInt(range) + 10;
-//
-//        Random randomLinha = new Random();
-//        Random randomColuna = new Random();
-//
-//        for (int i = 0; i <= obstaculo; i++) {
-//            int linha = randomLinha.nextInt(10);
-//            int coluna = randomColuna.nextInt(10);
-//            if (linha == 9 && coluna == 9) {
-//
-//            }
-//        }
-//
-//    }
-
 }

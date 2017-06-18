@@ -21,13 +21,11 @@ public class MetodoCaminhada {
     private int colunaRef;
 
     public String[][] verificar(int linha1, int coluna1, String[][] matriz1) {
-        //direita baixo cima esquerda
+        //DIREITA BAIXO CIMA ESQUERDA
         matriz = matriz1;
         linha = linha1;
         coluna = coluna1;
 
-        // System.out.println("A linha é" + linha);
-        // System.out.println("A coluna é" + coluna);
         if (coluna != 9
                 && !"x".equals(matriz[linha][coluna + 1]) && !"A".equals(matriz[linha][coluna + 1])
                 && !"-".equals(matriz[linha][coluna + 1])) {
@@ -127,14 +125,14 @@ public class MetodoCaminhada {
 
     }
 
-    public void algoritmoA(String[][] matriz1, int linha1, int coluna1) {
-        int distanciaFinal;
-        int distanciaAndada;
-
-        matriz = matriz1;
-        linha = linha1;
-        coluna = coluna1;
-    }
+//    public void algoritmoA(String[][] matriz1, int linha1, int coluna1) {
+//        int distanciaFinal;
+//        int distanciaAndada;
+//
+//        matriz = matriz1;
+//        linha = linha1;
+//        coluna = coluna1;
+//    }
 
     public String[][] verificar2(String[][] matriz1, int linha1, int coluna1) {
         matriz = matriz1;
@@ -148,8 +146,6 @@ public class MetodoCaminhada {
                 && !"-".equals(matriz[linha][coluna + 1])) {
             int soma;
             soma = 18 - (linha + coluna + 1);
-            System.out.println("direita");
-            System.out.println(soma);
             arraySoma.add(soma);
             arrayOrdem.add(1);
         }
@@ -159,8 +155,6 @@ public class MetodoCaminhada {
                 && !"-".equals(matriz[linha + 1][coluna])) {
             int soma;
             soma = 18 - (linha + 1 + coluna);
-            System.out.println("baixo");
-            System.out.println(soma);
             arraySoma.add(soma);
             arrayOrdem.add(2);
 
@@ -170,8 +164,6 @@ public class MetodoCaminhada {
                 && !"-".equals(matriz[linha - 1][coluna])) {
             int soma;
             soma = 18 - (linha + coluna - 1);
-            System.out.println("cima");
-            System.out.println(soma);
             arraySoma.add(soma);
             arrayOrdem.add(3);
         }
@@ -180,8 +172,6 @@ public class MetodoCaminhada {
                 && !"-".equals(matriz[linha][coluna - 1])) {
             int soma;
             soma = 18 - (linha + coluna - 1);
-            System.out.println("esquerda");
-            System.out.println(soma);
             arraySoma.add(soma);
             arrayOrdem.add(4);
         }
