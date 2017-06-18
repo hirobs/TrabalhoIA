@@ -23,9 +23,10 @@ public class NewMain {
 
         CriarMatriz criarMatriz = new CriarMatriz();
         String[][] matriz = new String[10][10];
-        
+        MetodoCaminhada caminhada = new MetodoCaminhada();
+
         matriz = criarMatriz.criarMatriz();
-        
+
         //matriz = criarMatriz.criarMatriz();
         //somar linha + coluna
         //int linhateste = 7;
@@ -33,7 +34,6 @@ public class NewMain {
         //int soma = linhateste + colunateste;
         //int distancia = 18 - soma;
         //JOptionPane.showMessageDialog(null, distancia);
-
         //direita baixo cima esquerda
         List<Integer> arrayOrdem = new ArrayList();
         // String[] arraySoma = new String[4];
@@ -112,26 +112,40 @@ public class NewMain {
                 menor = arraySoma1;
 
                 ordem = arrayOrdem.get(cont);
-                //System.out.println("UEPA ENTROU no "+ordem);
             }
             cont++;
         }
-        if (ordem == 1) {
-            System.out.println("Vai para direita");
-        } else {
-            if (ordem == 2) {
-                System.out.println("Vai para baixo");
-            } else {
-                if (ordem == 3) {
-                    System.out.println("vai para cima");
-                } else {
-                    if (ordem == 4) {
-                        System.out.println("vai para esquerda");
-                    } else {
-                        System.out.println("Nao entrou em nenhum");
-                    }
-                }
+//        caminhada.algoritmoA(matriz, linha, coluna);
+        matriz = caminhada.verificar2(matriz, linha, coluna);
+        for (int x = 0; x < 10; x++) {
+            String log = " ";
+            for (int t = 0; t < 10; t++) {
+                log = log + "[" + matriz[x][t] + "] ";
+
             }
+            System.out.println(log);
         }
+
+//        if (ordem == 1) {
+//            System.out.println("Vai para direita");
+//            caminhada.paraDireita();
+//        } else {
+//            if (ordem == 2) {
+//                System.out.println("Vai para baixo");
+//                caminhada.paraBaixo();
+//            } else {
+//                if (ordem == 3) {
+//                    System.out.println("vai para cima");
+//                    caminhada.paraCima();
+//                } else {
+//                    if (ordem == 4) {
+//                        System.out.println("vai para esquerda");
+//                        caminhada.paraEsquerda();
+//                    } else {
+//                        System.out.println("Nao entrou em nenhum");
+//                    }
+//                }
+//            }
+//        }
     }
 }

@@ -21,13 +21,14 @@ public class TrabalhoIA {
     static String verificaCondicao = "";
 
     public static void main(String[] args) {
-
+        int escolha = Integer.parseInt(JOptionPane.showInputDialog("Digite 1 para busca em largura"
+                + "\n Digite 2 para algoritmo*"));
         MetodoCaminhada caminhar = new MetodoCaminhada();
         CriarMatriz matriz1 = new CriarMatriz();
         String[][] matriz = matriz1.criarMatriz();
         int referenciaLinha = 0;
         int referenciaColuna = 0;
-        int caminhoPercorrido=0;
+        int caminhoPercorrido = 0;
 
         //Escrita Matriz Inicial
         for (int x = 0; x < 10; x++) {
@@ -40,17 +41,20 @@ public class TrabalhoIA {
         }
 
         System.out.println("\n");
-        
+
         int vida = 50;
         for (int i = 0; i <= 50; i++) {
 
-            
-            matriz = caminhar.verificar(referenciaLinha, referenciaColuna, matriz);
+            if (escolha == 1) {
+                matriz = caminhar.verificar(referenciaLinha, referenciaColuna, matriz);
+            } else {
+                matriz = caminhar.verificar2(matriz, referenciaLinha, referenciaColuna);
+            }
             //caminhar.verificar2(matriz);
             //Relação a bonus vida
             vida--;
             caminhoPercorrido++;
-            
+
             if ("C".equals(bonusVida)) {
                 vida = vida + 5;
                 bonusVida = "";

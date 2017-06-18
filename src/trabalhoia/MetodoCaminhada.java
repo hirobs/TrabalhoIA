@@ -127,16 +127,22 @@ public class MetodoCaminhada {
 
     }
 
-    public void algoritmoA() {
+    public void algoritmoA(String[][] matriz1, int linha1, int coluna1) {
         int distanciaFinal;
         int distanciaAndada;
 
+        matriz = matriz1;
+        linha = linha1;
+        coluna = coluna1;
     }
 
-    public void verificar2() {
+    public String[][] verificar2(String[][] matriz1, int linha1, int coluna1) {
+        matriz = matriz1;
+        linha = linha1;
+        coluna = coluna1;
+
         List<Integer> arrayOrdem = new ArrayList();
         List<Integer> arraySoma = new ArrayList();
-
         if (coluna != 9
                 && !"x".equals(matriz[linha][coluna + 1]) && !"A".equals(matriz[linha][coluna + 1])
                 && !"-".equals(matriz[linha][coluna + 1])) {
@@ -179,6 +185,7 @@ public class MetodoCaminhada {
             arraySoma.add(soma);
             arrayOrdem.add(4);
         }
+
         int menor = 18;
         int cont = 0;
         int ordem = 5;
@@ -188,27 +195,33 @@ public class MetodoCaminhada {
                 menor = arraySoma1;
 
                 ordem = arrayOrdem.get(cont);
-                //System.out.println("UEPA ENTROU no "+ordem);
             }
             cont++;
         }
+
         if (ordem == 1) {
-            System.out.println("ALGORITMO VAI PARA DIREITA");
+            System.out.println("Vai para direita");
+            paraDireita();
         } else {
             if (ordem == 2) {
-                System.out.println("ALGORITMO VAI PARA BAIXO");
+                System.out.println("Vai para baixo");
+                paraBaixo();
             } else {
                 if (ordem == 3) {
-                    System.out.println("ALGORITMO VAI PARA CIMA");
+                    System.out.println("vai para cima");
+                    paraCima();
                 } else {
                     if (ordem == 4) {
-                        System.out.println("ALGORITMO VAI PARA ESQUERDA");
+                        System.out.println("vai para esquerda");
+                        paraEsquerda();
                     } else {
-                        System.out.println("ALGORITMO NAO ENTROU");
+                        System.out.println("Nao entrou em nenhum");
+                        TrabalhoIA.verificaCondicao = "semSaida";
                     }
                 }
             }
         }
+        return matriz;
     }
 
 }
