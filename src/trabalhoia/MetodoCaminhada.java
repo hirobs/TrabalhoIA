@@ -20,6 +20,7 @@ public class MetodoCaminhada {
     private int linhaRef;
     private int colunaRef;
 
+    //Algoritmo largura
     public String[][] verificar(int linha1, int coluna1, String[][] matriz1) {
         //DIREITA BAIXO CIMA ESQUERDA
         matriz = matriz1;
@@ -125,15 +126,7 @@ public class MetodoCaminhada {
 
     }
 
-//    public void algoritmoA(String[][] matriz1, int linha1, int coluna1) {
-//        int distanciaFinal;
-//        int distanciaAndada;
-//
-//        matriz = matriz1;
-//        linha = linha1;
-//        coluna = coluna1;
-//    }
-
+    //Algoritmo A*
     public String[][] verificar2(String[][] matriz1, int linha1, int coluna1) {
         matriz = matriz1;
         linha = linha1;
@@ -205,7 +198,6 @@ public class MetodoCaminhada {
                         System.out.println("vai para esquerda");
                         paraEsquerda();
                     } else {
-                        System.out.println("Nao entrou em nenhum");
                         TrabalhoIA.verificaCondicao = "semSaida";
                     }
                 }

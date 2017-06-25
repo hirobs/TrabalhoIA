@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  */
 public class TrabalhoIA {
 
-    //Variavel Global
+    //Variavel Global de vida e status
     static String bonusVida = "";
     static String verificaCondicao = "";
 
@@ -61,9 +61,11 @@ public class TrabalhoIA {
                 }
             }
             if (vida < 0) {
+                //Verificação de 'sem vida'
                 JOptionPane.showMessageDialog(null, "Sem vida, fim do jogo");
                 break;
             } else {
+                //Verificação de 'sem saida'
                 if ("semSaida".equals(verificaCondicao)) {
                     JOptionPane.showMessageDialog(null, "Caminho sem saída. Fim do Jogo");
                     break;
@@ -95,8 +97,6 @@ public class TrabalhoIA {
                         Thread.sleep(850);
                     } catch (InterruptedException ex) {
                     }
-
-                    //PAROU AS PARADA DE ESCRITA
                 }
 
             }
